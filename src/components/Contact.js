@@ -14,7 +14,7 @@ export default function Contact(props) {
   <textarea class="form-control" id="exampleFormControlTextarea1" style={{backgroundColor: props.mode==='dark'? 'gray':'white', color:props.mode==='dark'? 'white':'black'}} rows="3"></textarea>
 </div>
 <div className='mb-3'>
-    <button>Submit</button>
+    <button className="btn btn-primary ">Submit</button>
 </div>
 </form>
 </div>

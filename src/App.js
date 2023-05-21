@@ -2,43 +2,55 @@ import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Text from './components/Text';
 import Contact from './components/Contact';
+import About from './components/About';
+import Alert from './components/Alert';
 import {
   BrowserRouter as Router,
   Route,
   Routes,
   
 } from "react-router-dom";
-import About from './components/About';
-
-
-
-
 
 
 function App() {
   const [mode, setMode] = useState('light');
+  const[alert, setAlert] = useState(null);
+  const showAlert =(message, type) =>{
+    setAlert({
+      msg: message,
+      type :type
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 2000);
+
+  }
+  
   const toggleMode=() =>{
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = 'gray';
+      showAlert("Dark mode has been enabled !", "succes")
     }
     else{
       setMode('light')
       document.body.style.backgroundColor = 'white';
+      showAlert("Light mode has been enabled !", "succes")
     }
 
 }
   return (
     <>
-    <Router>
+    <Router >
     <Navbar mode ={mode} toggleMode={toggleMode} /> 
+    <Alert alert= {alert} />
     <div className='container'>
    
     <Routes>
           <Route path="/contact" element={<Contact mode={mode} />}>
           </Route>
 
-          <Route path="/" element={ <Text heading="Text Converter" mode={mode}/>}>
+          <Route exact path="/" element={<Text heading="Text Converter" mode={mode} showAlert ={showAlert}/>}>
           </Route>
 
           <Route path='/about' element={<About mode={mode}/>}>
