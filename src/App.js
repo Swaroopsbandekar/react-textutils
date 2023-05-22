@@ -30,12 +30,12 @@ function App() {
     if (mode === 'light') {
       setMode('dark')
       document.body.style.backgroundColor = 'gray';
-      showAlert("Dark mode has been enabled !", "succes")
+      showAlert("Dark mode has been enabled !", "success")
     }
     else{
       setMode('light')
       document.body.style.backgroundColor = 'white';
-      showAlert("Light mode has been enabled !", "succes")
+      showAlert("Light mode has been enabled !", "success")
     }
 
 }
@@ -43,30 +43,22 @@ function App() {
     <>
     <Router >
     <Navbar mode ={mode} toggleMode={toggleMode} /> 
-    <Alert alert= {alert} />
+    <Alert alert={alert} />
     <div className='container'>
    
     <Routes>
+          <Route exact path="/" element={<Text heading="Text Converter - 
+          Conver the text into Upper case, Lower case & Copy text" mode={mode} showAlert ={showAlert}/>}>
+          </Route>
+
           <Route path="/contact" element={<Contact mode={mode} />}>
           </Route>
 
-          <Route exact path="/" element={<Text heading="Text Converter" mode={mode} showAlert ={showAlert}/>}>
-          </Route>
-
           <Route path='/about' element={<About mode={mode}/>}>
-
           </Route>
      </Routes>
      </div>
  </Router>
-
-
-
- 
-
-   
-
-  
     </>
   );
 }

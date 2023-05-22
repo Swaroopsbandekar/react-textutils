@@ -10,7 +10,7 @@ export default function Text(props) {
 
   const handleLoClick = () => {
     setText(text.toLowerCase())
-    props.showAlert("Converted to Lower Case !", "succes")
+    props.showAlert("Converted to Lower Case !", "success")
   }
 
   const handleOnClick = (event) => {
@@ -19,12 +19,12 @@ export default function Text(props) {
 
   const handleClrClick = () => {
     setText('')
-    props.showAlert("Text Cleared !", "succes")
+    props.showAlert("Text Cleared !", "success")
 
   }
   const handleCpClick = () => {
     navigator.clipboard.writeText(text)
-    props.showAlert("Copied to Clipboard !", "succes")
+    props.showAlert("Copied to Clipboard !", "success")
 
   }
 
@@ -35,7 +35,7 @@ export default function Text(props) {
     <div style={{color: props.mode==='dark'? 'white':'black'}} >
 
       <div className="container mb-3" style={{color: props.mode==='dark'? 'white':'black'}}>
-        <h1>{props.heading}</h1>
+        <h2>{props.heading}</h2>
         <label htmlFor="exampleFormControlTextarea1" className="form-label"></label>
         <textarea className="form-control" style={{backgroundColor: props.mode==='dark'? 'gray':'white', color:props.mode==='dark'? 'white':'black'}} id="exampleFormControlTextarea1" value={text} onChange={handleOnClick} rows="8"></textarea>
       </div>
@@ -46,7 +46,7 @@ export default function Text(props) {
 
       <div className="container my-3">
         <h2>Your Text Summary</h2>
-        <p>Words are <b> {text.split(" ").length } </b>|| characters are <b>{text.length}</b> </p> 
+        <p>Words are <b> {text.split(" ").length-1 } </b>|| characters are <b>{text.length }</b> </p> 
         <h6>Preview</h6>
         <p>{text}</p>
 
