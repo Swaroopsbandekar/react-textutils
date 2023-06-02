@@ -46,15 +46,15 @@ function App() {
     <Alert alert={alert} />
     <div className='container'>
    
-    <Routes>
+    <Routes >
           <Route exact path="/" element={<Text heading="Text Converter - 
           Conver the text into Upper case, Lower case & Copy text" mode={mode} showAlert ={showAlert}/>}>
           </Route>
 
-          <Route path="/contact" element={<Contact mode={mode} />}>
+          <Route exat path="/contact" element={<Contact mode={mode} />}>
           </Route>
 
-          <Route path='/about' element={<About mode={mode}/>}>
+          <Route exact path='/about' element={<About mode={mode}/>}>
           </Route>
      </Routes>
      </div>

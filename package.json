@@ -1,8 +1,8 @@
 {
   "name": "my-apps",
-  "homepage" : "https://Swaroopsbandekar.github.io/react-textutils",
+  "homepage": "https://Swaroopsbandekar.github.io/react-textutils",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -15,8 +15,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy" : "npm run build", 
-    "deploy": "gh-pages -d build", 
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
